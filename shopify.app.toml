@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "0ac7ff55e723ed06f933820e19483f86"
+name = "eventz"
+handle = "eventz"
+application_url = "https://indian-qt-often-latest.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://indian-qt-often-latest.trycloudflare.com/auth/callback",
+  "https://indian-qt-often-latest.trycloudflare.com/auth/shopify/callback",
+  "https://indian-qt-often-latest.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "eventsguy.myshopify.com"
+automatically_update_urls_on_dev = true
